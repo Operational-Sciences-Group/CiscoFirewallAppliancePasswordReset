@@ -48,7 +48,7 @@ Enter down, until you see something similar to:\
 Now, let's restart the device with:\
 'ciscoasa#reload' - you will be prompted to save configuration changes, enter yes to save our password reconfiguration.  You will then be asked to reconfirm the restart, press enter to reconfirm.
 
-# Step 5: Verifying out new password.
+# Step 5: Verifying our new password.
 Once the appliance finishes rebooting, you should be met with the 'ciscoasa>' prompt.  Enable priviledged access again with:
 'ciscoasa>enable'\
 When prompted for a password, enter the password we configured in step 4.  You should now be in a standard priviledged access mode with the prompt 'ciscoasa#'.
