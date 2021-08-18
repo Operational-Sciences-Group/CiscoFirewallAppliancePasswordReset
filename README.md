@@ -33,7 +33,7 @@ When prompted with the password, press enter without entering anything.  Your CL
 'ciscoasa#'\
 Next, enter the appliance configuration mode with:\
 'ciscoasa#conf t'\
-Your CLI should now show:\
+Your CLI prompt should now show:\
 'ciscoasa(config)#'\
 Next, configure the desired password for the device (this example uses yourpassword as the filler for, well, your password.):\
 'ciscoasa(config)#enable password yourpassword'\
