@@ -15,7 +15,7 @@ Next, open Putty and establish a connection on your active COM port @ baud 9600,
 
 # Step 2: Get into it.
 While leaving your serial connection open, power cycle the appliance by disconnecting and reconnecting the power supply.\
-While the device is beginning it's boot scroll press [esc] to halt the boot process.  This will put you into ROM Monitor mode.\
+While the device is beginning it's boot scroll press [esc] to halt the boot process.  This will put you into ROM Monitor mode.
 
 # Step 3: Booting without the password with rommon.
 Your prompt should display 'rommon #0>'.  Enter the 'confreg' command to view the current configuration register setting.\
