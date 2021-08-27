@@ -1,6 +1,6 @@
 TED Talk- How to Reset a Cisco Firewall Appliance Password 
 
-Hi, welcome to my Ted Talk. Today we're learning how to reset the password on a Cisco Firewall Appliance. (Model tested ASA5505) 
+Hi, welcome to my TED Talk. Today we're learning how to reset the password on a Cisco Firewall Appliance. (Model tested ASA5505) 
 
 If you're anything like me, you know that the reset button on a Cisco firewall does absolutely nothing, so here's the solution to get that reset and privileged access to your appliance: 
 
