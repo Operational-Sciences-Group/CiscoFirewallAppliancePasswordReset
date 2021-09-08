@@ -1,6 +1,5 @@
 # How To TedTalk-Reset a Cisco Firewall Appliance Password
 Hi, welcome to my Ted Talk.  Today we're learning how to reset the password on a Cisco Firewall Appliance.  (Model tested ASA5505)\
-If you're anything like me, you know that the reset button on a Cisco firewall does absolutley fuck-all, so here's the solution to get that reset and priviledged access to your appliance:
 
 # Preliminary: Get the stuff you need.
 Putty\
@@ -10,7 +9,7 @@ A USB to DB-9 cable (because who the fuck has a serial port on a computer anymor
 # Step 1: Connect to the appliance.
 Connect your rollover cable to the console port on the appliance.\
 Note: While you maybe connecting to an RJ-45 Ethernet port, the connection needs to be made over serial- this is why alot of the proprietary Cisco cables are DB-9 to RJ-45.\
-In my case, I used a USB to DB-9 cable that came with propreitary drivers (So that my PC would 'see' the COM port), then connected that cable to the Rollover Cable into the device.\
+In my case, I used a USB to DB-9 cable that came with proprietary drivers (So that my PC would 'see' the COM port), then connected that cable to the Rollover Cable into the device.\
 Next, open Putty and establish a connection on your active COM port @ baud 9600, 8 parity bits, and 1 stop bit.
 
 # Step 2: Get into it.
@@ -27,9 +26,9 @@ Next, reset the appliance with the boot command:\
 
 # Step 4: Reconfiguring the password.
 After the appliance fully boots, you should be faced with the standard CLI prompt of (in the case of an ASA model) 'ciscoasa>'\
-To enter privledged mode, enter:\
+To enter privleged mode, enter:\
 'ciscoasa>enable'\
-When prompted with the password, press enter without entering anything.  Your CLI prompt should now show the # for priviledged mode:\
+When prompted with the password, press enter without entering anything.  Your CLI prompt should now show the # for privileged mode:\
 'ciscoasa#'\
 Next, enter the appliance configuration mode with:\
 'ciscoasa#conf t'\
@@ -44,11 +43,11 @@ Exit the appliance configuration mode with:\
 To verify that the previous command has been accepted, and that the device will return to 0x01 configuration register, use the command:\
 'ciscoasa#show version'\
 Enter down, until you see something similar to:\
-'Configuration Regsiter is 0x41 (will be 0x01 at next reload)'\
+'Configuration Register is 0x41 (will be 0x01 at next reload)'\
 Now, let's restart the device with:\
 'ciscoasa#reload' - you will be prompted to save configuration changes, enter yes to save our password reconfiguration.  You will then be asked to reconfirm the restart, press enter to reconfirm.
 
 # Step 5: Verifying our new password.
-Once the appliance finishes rebooting, you should be met with the 'ciscoasa>' prompt.  Enable priviledged access again with:
+Once the appliance finishes rebooting, you should be met with the 'ciscoasa>' prompt.  Enable privileged access again with:
 'ciscoasa>enable'\
 When prompted for a password, enter the password we configured in step 4.  You should now be in a standard priviledged access mode with the prompt 'ciscoasa#'.
