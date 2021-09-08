@@ -9,7 +9,7 @@
 
 
 # Step 1: Connect to the appliance.
-1. Connect your rollover cable to the console port on the appliance. (Note: While you maybe connecting to an RJ-45 Ethernet port, the connection needs to be made over serial- this is why alot of the proprietary Cisco cables are DB-9 to RJ-45.)
+1. Connect your rollover cable to the console port on the appliance. (Note: While you maybe connecting to an RJ-45 Ethernet port, the connection needs to be made over serial- therefore many of the proprietary Cisco cables are DB-9 to RJ-45.)
 2. In my case, I used a USB to DB-9 cable that came with proprietary drivers (So that my PC would 'see' the COM port), then connected that cable to the Rollover Cable into the device.
 3. Next, open PuTTY and establish a connection on your active COM port @ baud 9600, 8 parity bits, and 1 stop bit.
 
@@ -30,7 +30,7 @@
 13. Next, enter the appliance configuration mode with: ```ciscoasa#conf t```
 14. Your CLI prompt should now show: ```ciscoasa(config)#```
 15. Next, configure the desired password for the device : ```ciscoasa(config)#enable password <yourpassword>```
-16. While we are still in configuration mode, reset the configuration register to the default to force the device to read the startup configuration at next boot with:\ ```ciscoasa(config)#config-register 0x01```
+16. While we are still in configuration mode, reset the configuration register to the default to force the device to read the startup configuration at next boot with: ```ciscoasa(config)#config-register 0x01```
 17. Exit the appliance configuration mode with: ```ciscoasa(config)#exit```
 18. To verify that the previous command has been accepted, and that the device will return to 0x01 configuration register, use the command: ```ciscoasa#show version```
 19. Enter down, until you see something similar to: ```Configuration Register is 0x41 (will be 0x01 at next reload)```
@@ -39,5 +39,10 @@
 # Step 5: Verifying our new password.
 21. Once the appliance finishes rebooting, you should be met with the ```ciscoasa>``` prompt.  
 22. Enable privileged access again with: ```ciscoasa>enable```
-23. When prompted for a password, enter the password we configured in step 15.  
-***You should now be in a standard priviledged access mode with the prompt 'ciscoasa#'.***
+23. When prompted for a password, enter the password we configured in step 15.
+
+***You should now be in a standard privileged access mode with the prompt 'ciscoasa#'.***
+
+**Advisory**
+
+All the contents of this repository should be used for authorized and/or educational purposes only. Any misuse of this information will not be the responsibility of the author or of any other collaborator. Use it at your own networks and/or with the network owner's permission.
